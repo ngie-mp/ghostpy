@@ -9,8 +9,8 @@ class Player(object):
         self.height = 32
         self.falling = True
         self.ground = False
-        #self.img = pygame.image.load("ghostpy/assets/ghost.png").convert_alpha()
-        #pygame.display.flip()
+        self.img = pygame.image.load("ghostpy/assets/ghost.png").convert_alpha()
+        pygame.display.flip()
 
     def jump(self):
         if self.ground == False:
@@ -61,8 +61,6 @@ class Player(object):
                 self.ground = True
                 self.velocity = 0
                 self.y = blockY - self.height
-                print(self.falling)
-                print(blockY)
 
 
         if self.ground == False:
@@ -71,7 +69,6 @@ class Player(object):
         self.y -= self.velocity
 
     def render(self, window):
-        pygame.draw.rect(window, (223, 230, 233), (self.x, self.y, self.width, self.height))
-
+        window.blit(self.img, (self.x, self.y))
 
 
