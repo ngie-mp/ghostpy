@@ -53,12 +53,23 @@ while game_loop:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game_loop = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                moveX = 5
+            elif event.key == pygame.K_LEFT:
+                moveX = -5
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                moveX = 0
+            elif event.key == pygame.K_LEFT:
+                moveX = 0
 
     window.fill(gray)
 
     for block in blocklist:
         block.render(window)
 
+    player.x += moveX
     player.update(gravity, blocklist)
     player.render(window)
     clock.tick(60)
