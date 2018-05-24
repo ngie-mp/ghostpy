@@ -1,21 +1,21 @@
 import pygame
 
 class Player(object):
-    def __init__(self, x, y):
+    def __init__(self, x, y, img="ghostpy/assets/ghost.png"):
         self.x = x
         self.y = y
         self.velocity = 0
-        self.width = 32
-        self.height = 32
+        self.width = 64
+        self.height = 64
         self.falling = True
         self.ground = False
-        self.img = pygame.image.load("ghostpy/assets/ghost.png").convert_alpha()
+        self.img = pygame.image.load(img).convert_alpha()
         pygame.display.flip()
 
     def jump(self):
         if self.ground == False:
             return
-        self.velocity = 8
+        self.velocity = 10
         self.ground = False
 
     def collision(self, x1, y1, w1, h1, x2, y2, w2, h2):
