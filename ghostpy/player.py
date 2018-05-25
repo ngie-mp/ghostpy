@@ -70,5 +70,3 @@ class Player(object):
 
     def render(self, window):
         window.blit(self.img, (self.x, self.y))
-
-
