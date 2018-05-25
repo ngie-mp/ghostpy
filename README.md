@@ -6,4 +6,4 @@ First platerform python3 using pygame [WIP]
 
 git clone : https://github.com/ngie-mp/ghostpy.git
 
-python3 -m ghostpy
+`python3 -m ghostpy`
